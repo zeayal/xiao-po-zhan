@@ -1,1 +1,1 @@
-export const DEFAULE_TITLE='老刘和小丁的小破站'
+export const DEFAULE_TITLE='小丁和老刘的小破站'

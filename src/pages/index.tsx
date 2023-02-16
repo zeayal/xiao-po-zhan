@@ -15,7 +15,7 @@ export default function Home(props: HomeProps) {
     <>
       <Head>
         <title>{DEFAULE_TITLE}</title>
-        <meta name="description" content="记录老刘和小丁的小破站" />
+        <meta name="description" content={DEFAULE_TITLE} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
