@@ -1,16 +1,16 @@
 import { Footer, HeroBanner, Navbar } from '@/components'
-import PostList from '@/components/PostList'
+import PostList, { PostCardProps } from '@/components/PostList'
 import { DEFAULE_TITLE } from '@/constants'
 import { getPostList } from '@/utils'
 import Head from 'next/head'
 import Image from 'next/image'
 
 type HomeProps = {
-  posts: any[]
+  posts: PostCardProps[]
 }
 
 export default function Home(props: HomeProps) {
-  console.log('props,', props)
+
   return (
     <>
       <Head>

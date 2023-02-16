@@ -1,8 +1,19 @@
 import { getPostList } from "@/utils"
 import Image from 'next/image';
 
-function PostCardItem({ title, avatar, desc, photo, author, createTime }) {
-    console.log('photo', photo)
+
+export type PostCardProps = {
+    id?: string;
+    title: string;
+    avatar: string;
+    desc: string;
+    photo: string;
+    author: string;
+    createTime: string;
+}
+
+function PostCardItem({ title, avatar, desc, photo, author, createTime }: PostCardProps) {
+    
     return (
         <div className="flex flex-col w-full my-4 cursor-pointer  hover:scale-105 transition ease-in-out delay-150 shadow-xl">
             <div className="relative w-full h-52 rounded-t-lg overflow-hidden ">
@@ -24,7 +35,7 @@ function PostCardItem({ title, avatar, desc, photo, author, createTime }) {
 
 
 type PostListProps = {
-    posts: any[]
+    posts: PostCardProps[]
 }
 
 export default function PostList({ posts }: PostListProps) {
@@ -33,7 +44,7 @@ export default function PostList({ posts }: PostListProps) {
             <div className="text-xl font-bold">
                 最近发布
             </div>
-            <div className="grid grid-cols-4 gap-x-8">
+            <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-8">
                 {posts.map(post => {
                     const { id, title, avatar, desc, photo, createTime, author } = post;
                     return <PostCardItem key={id} title={title} avatar={avatar} desc={desc} photo={photo} createTime={createTime} author={author} />
