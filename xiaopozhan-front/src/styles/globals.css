@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes t {
+  from {
+    background-size: 0 200%;
+  }
+}
+@keyframes b {
+  50% {
+    background-position: 0 -100%, 0 0;
+  }
+}
+
+.type {
+  color: transparent;
+  background: linear-gradient(-90deg, #fff 5px, #0000 0) 10px 0,
+    linear-gradient(#fff 0 0) 0 0;
+  background-size: calc(var(--n) * var(--fontSize)) 200%;
+  background-clip: text;
+  background-repeat: no-repeat;
+  animation: b 0.3s infinite steps(1),
+    t calc(var(--n) * 0.3s) steps(var(--n)) forwards;
+    animation-delay: var(--delay);
+}
